@@ -1,0 +1,2 @@
+#The cmd way to merge fasta files. The results may need sort
+type D:\fasta files\*.fsa >all.fsa
