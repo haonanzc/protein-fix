@@ -1,2 +1,3 @@
 #The cmd way to merge fasta files. The results may need sort
-type D:\fasta files\*.fsa >all.fsa
+#Open cmd in one folder to operate the daughter folder's files
+type fasta files\*.fsa >all.fsa
