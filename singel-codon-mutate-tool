@@ -1,0 +1,27 @@
+# This python code could be used to mutate DNA sequence by every singel codon with the 64 codons.
+
+def replace(seq, start, end, re):
+    ret = seq[:start] + re + seq[end:]
+    return ret
+
+seq_name = ">m"
+seq = "ATGATCGATCGATCGATC"
+# seq should be changed by user's purpose.
+i = 0
+# The sequence first index is 0.
+codon = ["ggg", "gga", "ggt", "ggc", "gag", "gaa", "gat", "gac", "gtg", "gta", "gtt", "gtc", "gcg", "gca", "gct", "gcc", "agg", "aga", "agt", "agc", "aag", "aaa", "aat", "aac", "atg", "ata", "att", "atc", "acg", "aca", "act", "acc", "tgg", "tga", "tgt", "tgc", "tag", "taa", "tat", "tac", "ttg", "tta", "ttt", "ttc", "tcg", "tca", "tct", "tcc", "cgg", "cga", "cgt", "cgc", "cag", "caa", "cat", "cac", "ctg", "cta", "ctt", "ctc", "ccg", "cca", "cct", "ccc"]
+
+with open("seq.txt",'a') as f:
+    f.truncate(0)
+    while i < len(seq)-3:
+        i = i + 3
+        end = i + 3
+        for j in range(0, len(codon)):
+            ret = replace(seq, i, end, codon[j])
+            j = j + 1
+            name = seq_name + "-" + str(i+1) + "-" + str(j)
+            f.write(name + '\n')
+            f.write(ret + '\n')
+
+print("Finished.")  
+
