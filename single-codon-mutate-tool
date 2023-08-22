@@ -1,4 +1,4 @@
-# This python code could be used to mutate DNA sequence by every singel codon with the 64 codons.
+# This python code could be used to mutate DNA sequence by every single codon with the 64 codons.
 
 def replace(seq, start, end, re):
     ret = seq[:start] + re + seq[end:]
