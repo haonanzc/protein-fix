@@ -13,6 +13,8 @@ codon = ["ggg", "gga", "ggt", "ggc", "gag", "gaa", "gat", "gac", "gtg", "gta", "
 
 with open("seq.txt",'a') as f:
     f.truncate(0)
+    f.write(">wt" + '\n')
+    f.write(seq + '\n')
     while i < len(seq)-3:
         i = i + 3
         end = i + 3
